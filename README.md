@@ -9,18 +9,18 @@
 - ToVect
 - ToVectStr
 ## How to include ?
-```c++
+```cpp
 #include "Elip.hpp"
 ```
 ## Examples:
 - Elip::String:
-```c++
+```cpp
 Elip::String myString("Hello dev");
 myString.Replace("dev", "you name");
 std::cout << myString<<"\n";
 ```
 - Elip::Vector:
-```c++
+```cpp
 Elip::Vector<Elip::String> myVector;
 
 myVector.PushBack(Elip::String("hola mundo"));
