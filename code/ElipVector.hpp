@@ -51,7 +51,7 @@ template <typename T> class Vector
         copy.vector = std::vector<T>(this->vector);
         return copy;
     }
-    bool operator==(std::vector<T> mv)
+    bool operator==(const std::vector<T> &mv)
     {
         if (this->vec == mv)
         {
@@ -62,7 +62,7 @@ template <typename T> class Vector
             return false;
         }
     }
-    bool operator==(Elip::Vector<T> obj)
+    bool operator==(const Elip::Vector<T> &obj)
     {
         if (this->vector == obj.vector)
         {
@@ -130,6 +130,28 @@ template <typename T> class Vector
             }
         }
         this->Set(newStr);
+    }
+    int SearchByCallback(std::function<bool(T)> callback)
+    {
+        for (std::size_t i = 0; i < this->GetSize(); i++)
+        {
+            if (callback(this->Get(i)))
+            {
+                return i;
+            }
+        }
+        return false;
+    }
+    template <typename U> int Search(U element)
+    {
+        for (std::size_t i = 0; i < this->GetLength(); i++)
+        {
+            if (this->Get(i) == element)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 
     void Filter(std::function<unsigned int(T, unsigned int, Elip::Vector<T>)> callback)

@@ -40,5 +40,12 @@ class IndexError : public Elip::ElipException
     {
     }
 };
+class InvalidFormatError : public Elip::ElipException
+{
+  public:
+    InvalidFormatError(std::string info) : Elip::ElipException("The format is not invalid", info)
+    {
+    }
+};
 } // namespace Elip
 #endif

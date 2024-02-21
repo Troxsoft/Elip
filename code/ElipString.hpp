@@ -46,9 +46,20 @@ class String
     {
         this->str = str;
     }
-    bool operator==(std::string str)
+    bool operator==(const std::string &str)
     {
         if (this->str == str)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    bool operator==(const Elip::String &str)
+    {
+        if (this->str == str.str)
         {
             return true;
         }

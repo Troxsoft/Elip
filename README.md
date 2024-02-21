@@ -1,4 +1,4 @@
-# A c++ 11 utils only headers
+# A c++ 17 utils only headers
 ### Class
 - Elip::String
 - Elip::Vector
@@ -8,6 +8,8 @@
 - PrintVector
 - ToVect
 - ToVectStr
+- Format -> wiht Color(Windows,Linux,MacOS)
+- Printf ->with Format
 ## How to include ?
 ```c++
 #include "Elip.hpp"

@@ -2,6 +2,7 @@
 #define H__ELIP__TOOLS__H
 
 #include "ElipExceptions.hpp"
+#include "ElipFormat.hpp"
 #include "ElipString.hpp"
 #include "ElipVector.hpp"
 #include <iostream>
