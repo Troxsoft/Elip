@@ -15,6 +15,18 @@
 #include "Elip.hpp"
 ```
 ## Examples:
+- Format and Printf:
+```cpp
+#include "Elip.hpp"
+using namespace Elip;
+int main(){
+    //  RED    RED   GREEN
+    // hello Joaquin!!!
+    Printf("{FG_RED}hello {}{FG_RESET}{FG_GREEN}!!!{FG_RESET}","Joaquin");
+    auto result = Format("hellooooo {} {}","C++",17);
+    Printf("{}",result);
+}
+```
 - Elip::String:
 ```cpp
 Elip::String myString("Hello dev");
