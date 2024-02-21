@@ -19,12 +19,13 @@
 ```cpp
 #include "Elip.hpp"
 using namespace Elip;
-int main(){
+int main()
+{
     //  RED    RED   GREEN
     // hello Joaquin!!!
-    Printf("{FG_RED}hello {}{FG_RESET}{FG_GREEN}!!!{FG_RESET}","Joaquin");
-    auto result = Format("hellooooo {} {}","C++",17);
-    Printf("{}",result);
+    Printf("{FG_RED}hello {}{FG_GREEN}!!!{FG_RESET}\n", "Joaquin");
+    auto result = Format("hellooooo {} {}", "C++", 17);
+    Printf("{}", result);
 }
 ```
 - Elip::String:
