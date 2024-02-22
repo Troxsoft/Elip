@@ -126,6 +126,10 @@ class String
     {
         this->str.insert(0, toInsert);
     }
+    void ReserveMemory(std::size_t size)
+    {
+        this->str.reserve(size);
+    }
     void InsertRight(const std::string &toInsert)
     {
         this->str.insert(this->GetLength(), toInsert);

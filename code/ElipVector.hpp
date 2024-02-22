@@ -16,6 +16,10 @@ template <typename T> class Vector
     {
         this->vector = std::vector<T>(from);
     }
+    void ReserveElements(std::size_t size)
+    {
+        this->vector.reserve(size);
+    }
     friend std::ostream &operator<<(std::ostream &out, Elip::Vector<T> const &obj)
     {
         unsigned int i = 0;
@@ -51,6 +55,7 @@ template <typename T> class Vector
         copy.vector = std::vector<T>(this->vector);
         return copy;
     }
+
     bool operator==(const std::vector<T> &mv)
     {
         if (this->vec == mv)
@@ -74,9 +79,9 @@ template <typename T> class Vector
         }
     }
 
-    std::vector<T> ToVector()
+    std::vector<T> *ToVector()
     {
-        return this->vector;
+        return &this->vector;
     }
     void PushFront(T element)
     {

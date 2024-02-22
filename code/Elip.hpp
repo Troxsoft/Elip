@@ -63,7 +63,18 @@ Elip::Vector<Elip::String> Split(Elip::String str, const std::string &delimiter)
         return res;
     }
 }
-
+Elip::String Str(unsigned int str)
+{
+    return Elip::String(std::to_string(str));
+}
+Elip::String Str(float str)
+{
+    return Elip::String(std::to_string(str));
+}
+Elip::String Str(int str)
+{
+    return Elip::String(std::to_string(str));
+}
 Elip::String Str(const char *str)
 {
     return Elip::String(std::string(str));
@@ -114,6 +125,27 @@ template <typename T> Elip::Vector<T> ToVect(std::vector<T> from)
     Elip::Vector<T> co;
     co.vector = from;
     return co;
+}
+template <typename T> Elip::String VectorToString(Elip::Vector<T> obj)
+{
+    unsigned int i = 0;
+    Elip::String str;
+    str.ReserveMemory(sizeof(T) * obj.GetSize() + sizeof("{") + sizeof("}"));
+    str.InsertRight("{");
+    while (i < obj.GetSize())
+    {
+        if (i + 1 >= obj.GetSize())
+        {
+            str.InsertRight(Elip::FormatWithoutColor("{}", obj[i]).ToString());
+        }
+        else
+        {
+            str.InsertRight(Elip::FormatWithoutColor("{},", obj[i]).ToString());
+        }
+        i++;
+    }
+    str.InsertRight("}");
+    return str;
 }
 } // namespace Elip
 #endif

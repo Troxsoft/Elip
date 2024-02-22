@@ -3,7 +3,7 @@
 using namespace Elip;
 int main()
 {
-    ActivateColor();
+    ActivateTerminal();
     for (int i = 0; i < 1000000; i++)
     {
         Printf("{FG_GREEN}Number:{}{FG_RESET}\n", i);

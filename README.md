@@ -10,6 +10,10 @@
 - ToVectStr
 - Format -> wiht Color(Windows,Linux,MacOS)
 - Printf ->with Format
+- PrinfWithoutColor ->Prinf without color
+- FormatfWithoutColor -> Format without color
+- ChangeTerminalTitle -> (Windows,Linux,MacOS)
+- ChangeTerminalCursorPosition -> (Windows,Linux,MacOS)
 ## How to include ?
 ```cpp
 #include "Elip.hpp"
@@ -23,6 +27,7 @@ int main()
 {
     //  RED    RED   GREEN
     // hello Joaquin!!!
+    ActivateTerminal();
     Printf("{FG_RED}hello {}{FG_GREEN}!!!{FG_RESET}\n", "Joaquin");
     auto result = Format("hellooooo {} {}", "C++", 17);
     Printf("{}", result);
