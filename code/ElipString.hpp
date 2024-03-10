@@ -262,7 +262,16 @@ namespace Elip
         {
             std::transform(this->str.begin(), this->str.end(), this->str.begin(), ::tolower);
         }
-
+        std::vector<Elip::String> SplitToVector(const std::string &delimiter)
+        {
+            std::vector<std::string> split = this->SplitToVectorString(delimiter);
+            std::vector<Elip::String> splitStr;
+            for (std::size_t i = 0; i < split.size(); i++)
+            {
+                splitStr.push_back(Elip::String(split[i]));
+            }
+            return splitStr;
+        }
         std::vector<std::string> SplitToVectorString(const std::string &delimiter)
         {
             if (delimiter == "")

@@ -59,6 +59,7 @@ namespace Elip
         {
             return this->vector[index];
         }
+
         Elip::Vector<T> Copy()
         {
             Elip::Vector<T> copy;
@@ -225,7 +226,16 @@ namespace Elip
             this = newStr;
         }
     };
-
+    Elip::String Join(Elip::Vector<Elip::String> vec, Elip::String sep)
+    {
+        Elip::String kk;
+        for (std::size_t i = 0; i < vec.GetSize(); i++)
+        {
+            kk.InsertRight(vec[i].ToString());
+            kk.InsertRight(sep.ToString());
+        }
+        return kk;
+    }
 } // namespace Elip
 
 #endif

@@ -67,9 +67,6 @@ namespace Elip
                 return this->_values.Get(this->_keys.Search(key));
             }
         }
-        /*
-        {hola:20,}
-        */
 
         std::size_t GetSize()
         {
@@ -107,6 +104,28 @@ namespace Elip
         Elip::Vector<V> GetValues()
         {
             return this->_values.Copy();
+        }
+        void operator=(Elip::Map<K, V> other)
+        {
+            this->_keys = other._keys;
+            this->_values = other._values;
+        }
+        bool operator==(const Elip::Map<K, V> &other)
+        {
+            if (this->_keys == other._keys && this->_values == other._values)
+            {
+                return true;
+            }
+            return false;
+        }
+        std::map<K, V> ToMap()
+        {
+            std::map<K, V> mapp;
+            for (std::size_t i = 0; i < this->GetSize(); i++)
+            {
+                mapp[this->_keys[i]] = this->_values[i];
+            }
+            return mapp;
         }
     };
 }; // namespace Elip
