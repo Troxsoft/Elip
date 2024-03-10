@@ -28,7 +28,8 @@ int main()
     information.InsertRight(" No or ???");
     std::cout << information << "\n";
 
-    information.Filter([](char value, unsigned int index) {
+    information.Filter([](char value, unsigned int index)
+                       {
         if (value == 'p')
         {
             return false;
@@ -36,10 +37,10 @@ int main()
         else
         {
             return true;
-        }
-    });
+        } });
 
-    information.Filter([](char value, unsigned int index, Elip::String str) {
+    information.Filter([](char value, unsigned int index, Elip::String str)
+                       {
         if (value == 'a' && str.Get(index + 1) == 's')
         {
             return 1;
@@ -47,8 +48,7 @@ int main()
         else
         {
             return 0;
-        }
-    });
+        } });
     if (information.EndsWith("????"))
     {
         std::cout << "si"
