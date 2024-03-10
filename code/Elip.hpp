@@ -5,6 +5,7 @@
 #include "ElipFormat.hpp"
 #include "ElipString.hpp"
 #include "ElipVector.hpp"
+#include "ElipMap.hpp"
 #include <iostream>
 #include <vector>
 /**

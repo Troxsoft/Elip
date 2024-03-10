@@ -1,6 +1,7 @@
 #ifndef H__ELIP__VECTOR__TOOLS__H
 #define H__ELIP__VECTOR__TOOLS__H
 #include <iostream>
+
 namespace Elip
 {
     template <typename T>
@@ -19,6 +20,7 @@ namespace Elip
         {
             this->vector = std::vector<T>(from);
         }
+
         void ReserveElements(std::size_t size)
         {
 
@@ -155,8 +157,11 @@ namespace Elip
             }
             return false;
         }
-        template <typename U>
-        int Search(U element)
+        void Delete(std::size_t index)
+        {
+            this->vector.erase(this->vector.begin() + index);
+        }
+        int Search(T element)
         {
             for (std::size_t i = 0; i < this->GetLength(); i++)
             {

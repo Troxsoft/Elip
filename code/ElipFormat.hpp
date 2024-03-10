@@ -125,6 +125,7 @@ namespace Elip
                 {
                     result.Replace("{}", p->ToString());
                 }
+
                 else if (args[i].type() == typeid(const char *))
                 {
                     result.Replace("{}", std::any_cast<const char>(&args[i]));
@@ -148,7 +149,6 @@ namespace Elip
     {
 
         Elip::String result(format);
-
         for (int i = 0; i < args.size(); i++)
         {
             if (args[i].has_value())
@@ -178,6 +178,7 @@ namespace Elip
                 {
                     result.Replace("{}", p->ToString());
                 }
+
                 else if (args[i].type() == typeid(const char *))
                 {
                     result.Replace("{}", std::any_cast<const char>(&args[i]));

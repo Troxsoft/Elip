@@ -23,6 +23,9 @@ namespace Elip
         String(const std::string &string) : str(string)
         {
         }
+        String(const char string[]) : str(string)
+        {
+        }
         String() : str("")
         {
         }

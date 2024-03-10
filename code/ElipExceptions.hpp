@@ -3,8 +3,8 @@
 #include <iostream>
 namespace Elip
 {
-class ElipException : public std::exception
-{
+  class ElipException : public std::exception
+  {
   private:
     std::string message;
     std::string info_;
@@ -15,37 +15,44 @@ class ElipException : public std::exception
     }
     char *what()
     {
-        return (char *)this->message.c_str();
+      return (char *)this->message.c_str();
     }
     std::string GetMessage()
     {
-        return this->message;
+      return this->message;
     }
     std::string GetInfo()
     {
-        return this->info_;
+      return this->info_;
     }
-};
-class LenghtError : public Elip::ElipException
-{
+  };
+  class LenghtError : public Elip::ElipException
+  {
   public:
     LenghtError(std::string info) : Elip::ElipException("The length is incorrect", info)
     {
     }
-};
-class IndexError : public Elip::ElipException
-{
+  };
+  class IndexError : public Elip::ElipException
+  {
   public:
     IndexError(std::string info) : Elip::ElipException("The length is incorrect", info)
     {
     }
-};
-class InvalidFormatError : public Elip::ElipException
-{
+  };
+  class InvalidFormatError : public Elip::ElipException
+  {
   public:
     InvalidFormatError(std::string info) : Elip::ElipException("The format is not invalid", info)
     {
     }
-};
+  };
+  class MapKeyError : public Elip::ElipException
+  {
+  public:
+    MapKeyError(std::string info) : Elip::ElipException("not exists the key", info)
+    {
+    }
+  };
 } // namespace Elip
 #endif

@@ -1,7 +1,8 @@
-# A c++ 17 utils only headers
+# A c++ 20 utils only headers
 ### Class
 - Elip::String
 - Elip::Vector
+- Elip::Map
 ### Functions
 - Str
 - Split
@@ -32,24 +33,12 @@ int main()
     auto result = Format("hellooooo {} {}", "C++", 17);
     Printf("{}", result);
 }
-```
-- Elip::String:
+- Strings
 ```cpp
-Elip::String myString("Hello dev");
-myString.Replace("dev", "you name");
-std::cout << myString<<"\n";
+Elip::String myString("hello python hello");
+myString.Replace("python", "amo");
+myString.TrimLeft("hello");
+Elip::Printf("{}",myString);
 ```
-- Elip::Vector:
-```cpp
-Elip::Vector<Elip::String> myVector;
-
-myVector.PushBack(Elip::String("hola mundo"));
-myVector.PushBack(Elip::String("ana"));
-myVector.PushBack(Elip::String("lol"));
-std::cout << myVector << "\n";
-std::cout << "\n";
-std::cout << myVector.GetFirst() << "\n";
-myVector[2] = Elip::String("f en el chat");
-std::cout << myVector.GetLast() << "\n";
-```
+- More examples in examples folder
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
