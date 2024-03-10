@@ -6,19 +6,19 @@
 - Elip::Map
 - Elip::File
 ### Functions
-#Strings
+# Strings
 - Str
 - Split
-#Format and Print
+# Format and Print
 - Format -> wiht Color(Windows,Linux,MacOS)
 - Printf ->with Format
 - PrinfWithoutColor ->Prinf without color
 - FormatfWithoutColor -> Format without color
-#Terminal utils
+# Terminal utils
 - ChangeTerminalTitle -> (Windows,Linux,MacOS)
 - ChangeTerminalCursorPosition -> (Windows,Linux,MacOS)
 - ActivateTerminal
-#Filesystem
+# Filesystem
 - ExistsFS
 - IsFileFS
 - IsDirectoryFS
@@ -27,7 +27,7 @@
 - CreateDirectoryFS
 - CreateSymLinkFS
 - CreateFileFS
-#Vector
+# Vector
 - Join
 - PrintVector
 - ToVect
