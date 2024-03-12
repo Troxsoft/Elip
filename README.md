@@ -1,5 +1,5 @@
 ![](Elip.png)
-# A c++ 20 utils only headers
+# A c++ 20 utils headers
 ### Class
 - Elip::String
 - Elip::Vector
@@ -9,15 +9,18 @@
 # Strings
 - Str
 - Split
+- And more
 # Format and Print
 - Format -> wiht Color(Windows,Linux,MacOS)
 - Printf ->with Format
 - PrinfWithoutColor ->Prinf without color
 - FormatfWithoutColor -> Format without color
+- And more
 # Terminal utils
 - ChangeTerminalTitle -> (Windows,Linux,MacOS)
 - ChangeTerminalCursorPosition -> (Windows,Linux,MacOS)
 - ActivateTerminal
+- And more
 # Filesystem
 - ExistsFS
 - IsFileFS
@@ -27,11 +30,13 @@
 - CreateDirectoryFS
 - CreateSymLinkFS
 - CreateFileFS
+- And more
 # Vector
 - Join
 - PrintVector
 - ToVect
 - ToVectStr
+- And more
 ## How to include ?
 ```cpp
 #include "Elip.hpp"
