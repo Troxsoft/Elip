@@ -91,32 +91,66 @@ Elip::Printf("{}\n",myString);
 namespace Elip
 {
     /*
-    ## The `Elip::String` class
-    ### Contains `methods` for `handling` `strings`
-    */
+    ## A utils class for string
+    #### Tools:
+    - `Manipulate` `strings`
+    - Utils `functions` for `strings`
+    ### Example:
+```cpp
+// Create String
+Elip::String str("hello");
+// Replace hello wih hi
+str.Replace("hello","hi");
+str.Conatains("hi"); // return true
+str.Contains("hello"); // return false
+```*/
     class String
     {
     private:
         std::string str;
 
     public:
+        /*
+        ### Make a string with: `std::string`
+        */
         String(const std::string &string) : str(string)
         {
         }
+        /*
+    ### Make a string with: `const char[]`
+    */
         String(const char string[]) : str(string)
         {
         }
+        /*
+        ### Make a empty string as ""
+        */
         String() : str("")
         {
         }
+        /*
+        ## Get length for string
+        ##### Wrapper for
+```cpp
+std::string.length();
+```
+        */
         std::size_t GetLength()
         {
             return this->str.length();
         }
+        /*
+        ### Replace a search with other string
+        ###
+        */
         void Replace(const std::string &toSearch, const std::string &toReplace)
         {
             this->str = this->str.replace(this->str.find(toSearch), toSearch.size(), toReplace);
         }
+        /*
+        ### Replace all searchs with other string
+        ###
+        */
         void ReplaceAll(const std::string &toSearch, const std::string &toReplace)
         {
             for (int i = 0; this->Contains(toSearch); i++)
@@ -151,7 +185,9 @@ namespace Elip
                 return false;
             }
         }
-
+        /*
+        ## Check if string contains other string
+        */
         bool Contains(const std::string &toSearch)
         {
             if (this->str.find(toSearch) != std::string::npos)
@@ -160,15 +196,23 @@ namespace Elip
             }
             return false;
         }
+        /*
+        ### Convert Elip::String to std::string
+        */
         std::string ToString() noexcept
         {
             return this->str;
         }
-
+        /*
+        ### Remove a string at the end
+        */
         void TrimLeft(const std::string &toTrim)
         {
             this->str.erase(str.find_last_not_of(toTrim) + 1);
         }
+        /*
+        ### This function is used to determine the number of occurrences of a specified substring within a given string.
+        */
         int Count(const std::string &str)
         {
             int count = 0;
@@ -181,31 +225,51 @@ namespace Elip
             }
             return count;
         }
+        /*
+        ### Try convert this `string` as `int`
+        */
         int ToInt()
         {
             return std::stoi(this->ToString());
         }
+        /*
+       ### Try convert this `string` as `float`
+       */
         float ToFloat()
         {
             return std::stof(this->ToString());
         }
+        /*
+       ### Try convert this `string` as `double`
+       */
         double ToDouble()
         {
             return std::stod(this->ToString());
         }
+        /*
+       ### Try convert this `string` as `long double`
+       */
         long double ToLongDouble()
         {
             return std::stold(this->ToString());
         }
-
+        /*
+        ### Remove a string at the start
+        */
         void TrimRight(const std::string &toTrim)
         {
             this->str.erase(0, str.find_first_not_of(toTrim));
         }
+        /*
+        ## Equivalent to `==`
+        */
         void Set(const std::string &newStr)
         {
             this->str = newStr;
         }
+        /*
+      ## Set char into string
+      */
         void Set(unsigned int index, char newChar)
         {
             if (index > this->GetLength())
@@ -214,6 +278,9 @@ namespace Elip
             }
             this->str[index] = newChar;
         }
+        /*
+        ## Get char with index
+        */
         char Get(unsigned int index)
         {
             if (index > this->GetLength())

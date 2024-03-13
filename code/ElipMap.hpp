@@ -88,6 +88,23 @@ Elip::Printf("{}\n",myString);
 */
 namespace Elip
 {
+    /*
+    ## Util Map class
+    ## Examples:
+    ## Create Map
+```cpp
+//            key type(K)    value type(V)
+Elip::Map<  Elip::String  ,      int    > myMap;
+```
+    ### Get value
+```cpp
+map.Get("my key");
+```
+    ### Set/create key with value
+```cpp
+map.Set(2024,"the 2024");
+```
+    */
     template <typename K, typename V>
 
     class Map
@@ -97,10 +114,23 @@ namespace Elip
         Elip::Vector<V> _values;
 
     public:
+        /*
+        ### Create a empty Map
+        */
         Map()
         {
         }
-
+        /*
+        ## If key `exist` return `true`
+        ###Example:
+```cpp
+//Create map
+Elip::Map<int,int> map;
+map.Set(2,2);
+map.Exists(0); // Return false
+map.Exists(2); // Return true
+```
+        */
         bool Exists(K key)
         {
             if (this->_keys.Search(key) == -1)
@@ -109,6 +139,19 @@ namespace Elip
             }
             return true;
         }
+        /*
+        ## Delete key and value
+        ### Example:
+```cpp
+map.Set("hello",2);
+// Check if exists the key
+map.Exists("hello"); // return true
+// Delete key: "hello"
+map.Delete("hello");
+// Check if exists the key
+map.Exists("hello"); // return false
+```
+        */
         void Delete(K key)
         {
             if (this->_keys.Search(key) == -1)
@@ -122,6 +165,14 @@ namespace Elip
                 this->_values.Delete(index);
             }
         }
+        /*
+        ## Create/Set key with value
+        #### How to use:
+```cpp
+//        KEY       VALUE
+map.Set("the key","with value");
+```
+        */
         void Set(K key, V value)
         {
             if (this->_keys.Search(key) == -1)
@@ -136,6 +187,14 @@ namespace Elip
                 this->_values.Set(index, value);
             }
         }
+        /*
+        ## Get value of key
+        ### Example:
+```cpp
+map.Set(2,2024);
+map.Get(2);// Return 2024
+```
+        */
         V Get(K key)
         {
             if (this->_keys.Search(key) == -1)
@@ -147,15 +206,23 @@ namespace Elip
                 return this->_values.Get(this->_keys.Search(key));
             }
         }
-
-        std::size_t GetSize()
+        /*
+        ### Get number of keys
+        */
+        [[unlikely]] [[deprecated]] std::size_t GetSize()
         {
             return this->_keys.GetSize();
         }
-        std::size_t GetLength()
+        /*
+        ### Get number of keys
+        */
+        [[unlikely]] [[deprecated]] std::size_t GetLength()
         {
             return this->GetSize();
         }
+        /*
+        ## Try convert to string
+        */
         Elip::String ToString()
         {
             Elip::Vector<K> keys = this->GetKeys();
@@ -177,10 +244,16 @@ namespace Elip
             str.InsertRight("}");
             return str;
         }
+        /*
+       ## Get all keys as Elip::Vector
+       */
         Elip::Vector<K> GetKeys()
         {
             return this->_keys.Copy();
         }
+        /*
+         ## get all values as Elip:.Vector
+        */
         Elip::Vector<V> GetValues()
         {
             return this->_values.Copy();
@@ -198,6 +271,9 @@ namespace Elip
             }
             return false;
         }
+        /*
+        ## Convert the Elip::Map to std::map
+        */
         std::map<K, V> ToMap()
         {
             std::map<K, V> mapp;
