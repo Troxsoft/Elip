@@ -7,6 +7,7 @@
 #include "ElipVector.hpp"
 #include "ElipMap.hpp"
 #include "ElipFileSystem.hpp"
+#include "ElipTerminal.hpp"
 #include <iostream>
 #include <vector>
 

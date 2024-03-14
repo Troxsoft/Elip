@@ -163,17 +163,17 @@ std::string.length();
         {
             this->str = str;
         }
-        bool operator==(const std::string &str)
-        {
-            if (this->str == str)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        // bool operator==(const std::string &str)
+        // {
+        //     if (this->str == str)
+        //     {
+        //         return true;
+        //     }
+        //     else
+        //     {
+        //         return false;
+        //     }
+        // }
         bool operator==(const Elip::String &str)
         {
             if (this->str == str.str)
@@ -338,6 +338,7 @@ std::string.length();
             {
                 return false;
             }
+
             if (this->str.substr(this->GetLength() - isEndsWith.length(), isEndsWith.length()) == isEndsWith)
             {
                 return true;
@@ -357,6 +358,7 @@ std::string.length();
         */
         void Filter(std::function<bool(char, unsigned int)> callback)
         {
+
             std::string newStr;
             for (size_t i = 0; i < this->GetLength(); i++)
             {
