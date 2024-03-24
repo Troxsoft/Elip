@@ -215,16 +215,16 @@ namespace Elip
         }
         void Filter(std::function<bool(T, unsigned int)> callback)
         {
-            std::string newStr;
+            Elip::Vector<T> newStr;
             for (size_t i = 0; i < this->GetLength(); i++)
             {
                 bool func = callback(this->Get(i), i);
                 if (func)
                 {
-                    newStr.push_back(this->Get(i));
+                    newStr.PushBack(this->Get(i));
                 }
             }
-            this->Set(newStr);
+            this->vector = newStr.ToVector();
         }
         int SearchByCallback(std::function<bool(T)> callback)
         {
@@ -295,14 +295,14 @@ namespace Elip
                 unsigned int func = callback(this->Get(i), i, this->Copy());
                 if (func == 0)
                 {
-                    newStr.push_back(this->Get(i));
+                    newStr.PushBack(this->Get(i));
                 }
                 else
                 {
                     i += func;
                 }
             }
-            this = newStr;
+            this->vector = newStr.ToVector();
         }
     };
     Elip::String Join(Elip::Vector<Elip::String> vec, Elip::String sep)

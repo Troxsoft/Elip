@@ -190,6 +190,20 @@ namespace Elip
 		{
 		}
 	};
+	class ThreadError : public Elip::ElipException
+	{
+	public:
+		ThreadError(std::string info) : Elip::ElipException("Error in thread.", info)
+		{
+		}
+	};
+	class ThreadExecError : public Elip::ThreadError
+	{
+	public:
+		ThreadExecError() : Elip::ThreadError("Error in the try running thread")
+		{
+		}
+	};
 
 } // namespace Elip
 #endif

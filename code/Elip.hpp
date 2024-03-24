@@ -8,6 +8,8 @@
 #include "ElipMap.hpp"
 #include "ElipFileSystem.hpp"
 #include "ElipTerminal.hpp"
+#include "ElipThread.hpp"
+#include "ElipTime.hpp"
 #include <iostream>
 #include <vector>
 

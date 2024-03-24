@@ -170,7 +170,7 @@ map.Exists("hello"); // return false
         #### How to use:
 ```cpp
 //        KEY       VALUE
-map.Set("the key","with value");
+map.Set("the key","with valvue");
 ```
         */
         void Set(K key, V value)
