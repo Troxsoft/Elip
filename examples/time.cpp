@@ -2,8 +2,13 @@
 #include <iostream>
 int main()
 {
-    Elip::DateTime time(2011, 11, 15);
-    std::tm *tim = time.ToTm();
+    Elip::DateTime time = Elip::DateTime::Now();
 
-    Elip::Printf("Dia:{} Mes:{} Año:{}\n", tim->tm_mday, tim->tm_mon, tim->tm_year);
+    // time.SetYear(2011);
+    // time.SetMonth(11);
+    // time.SetDay(15);
+    // time.SetHour(3);
+    // time.SetMinutes(10);
+    // time.SetSeconds(16);
+    Elip::Printf("{}\n", time.Format("{h12}:{m} {$}"));
 }

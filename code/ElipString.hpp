@@ -159,9 +159,13 @@ std::string.length();
             }
         }
         friend std::ostream &operator<<(std::ostream &out, const Elip::String &obj);
-        void operator=(std::string str)
+        void operator=(const char str[])
         {
             this->str = str;
+        }
+        void operator=(String str)
+        {
+            this->str = str.str;
         }
         // bool operator==(const std::string &str)
         // {
@@ -457,6 +461,30 @@ std::string.length();
     {
         out << obj.str;
         return out;
+    }
+    Elip::String Str(unsigned int str)
+    {
+        return Elip::String(std::to_string(str));
+    }
+    Elip::String Str(float str)
+    {
+        return Elip::String(std::to_string(str));
+    }
+    Elip::String Str(int str)
+    {
+        return Elip::String(std::to_string(str));
+    }
+    Elip::String Str(const char *str)
+    {
+        return Elip::String(std::string(str));
+    }
+    Elip::String Str(std::string str)
+    {
+        return Elip::String(str);
+    }
+    Elip::String Str(char str[])
+    {
+        return Elip::String(std::string(str));
     }
 } // namespace Elip
 

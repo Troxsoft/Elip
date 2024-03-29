@@ -59,9 +59,10 @@ namespace Elip
             }
             return false;
         }
-        static void Sleep(std::chrono::duration<double> duration)
+        // miliseconds
+        static void Sleep(int duration)
         {
-            std::this_thread::sleep_for(duration);
+            std::this_thread::sleep_for(std::chrono::milliseconds(duration));
         }
         static std::thread::id ID()
         {
